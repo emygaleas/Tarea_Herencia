@@ -10,7 +10,12 @@ public class Cliente extends Persona{
         super(nombre, cedula, direccion, telefono);
         this.tipo_cuenta = tipo_cuenta;
         this.saldo=0;
-        this.TarjetaCredito=TarjetaCredito;
+        this.TarjetaCredito="No asignada";
+    }
+
+    public Cliente(String nombre, String cedula, String direccion, String telefono, String tipo_cuenta) {
+        super(nombre, cedula, direccion, telefono);
+        this.tipo_cuenta = tipo_cuenta;
     }
 
     //metodos
