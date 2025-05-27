@@ -19,4 +19,21 @@ public class Persona {
     }
     //metodo para mostrar el rol de la persona -> abstracto
     public abstract void mostrarRol();
+
+    //Se establecen los getters de nombre, cedula, direccion y telefono
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
 }
