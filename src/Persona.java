@@ -1,4 +1,4 @@
-public class Persona {
+public abstract class Persona {
     //atributos
     protected String nombre;
     protected String cedula;

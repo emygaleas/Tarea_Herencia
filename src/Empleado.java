@@ -12,6 +12,11 @@ public class Empleado extends Persona{
         this.rol = rol;
     }
 
+    @Override
+    public void mostrarRol() {
+        System.out.println("Rol: Empleado");
+    }
+
     public boolean autenticarEmpleado(String usuario, String clave){
         return this.usuario.equals(usuario) && this.clave.equals(clave);
     }
@@ -27,6 +32,7 @@ public class Empleado extends Persona{
         System.out.println("Telefono: ");
         String nuv_telefono=sc.nextLine();
         cliente.actualizarDatos(nuv_direccion,nuv_telefono);
+        System.out.println("Los datos se han actualizado de forma correcta");
     }
 
     public void registrarPrestamo(Cliente cliente, double monto){

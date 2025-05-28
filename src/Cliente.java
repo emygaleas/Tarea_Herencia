@@ -1,21 +1,19 @@
-import com.sun.source.tree.ConstantCaseLabelTree;
-
 public class Cliente extends Persona{
     private String tipo_cuenta;
     private double saldo;
     private String TarjetaCredito;
 
     //metodo constructor
-    public Cliente(String nombre, String cedula, String direccion, String telefono, String tipo_cuenta, double saldo, String TarjetaCredito) {
+    public Cliente(String nombre, String cedula, String direccion, String telefono, String tipo_cuenta) {
         super(nombre, cedula, direccion, telefono);
         this.tipo_cuenta = tipo_cuenta;
         this.saldo=0;
         this.TarjetaCredito="No asignada";
     }
 
-    public Cliente(String nombre, String cedula, String direccion, String telefono, String tipo_cuenta) {
-        super(nombre, cedula, direccion, telefono);
-        this.tipo_cuenta = tipo_cuenta;
+    @Override
+    public void mostrarRol() {
+        System.out.println("Rol: Cliente con cuenta "+ tipo_cuenta);
     }
 
     //metodos
@@ -29,17 +27,35 @@ public class Cliente extends Persona{
     }
 
     public void solicitarPrestamo(double monto){
+        if (monto<=0){
+            System.out.println("El monto debe ser positivo");
+        }
         this.saldo+=monto;
         System.out.println("Su prestamo es de: "+monto+"\nTotal de saldo: "+saldo);
     }
 
     public void agregarTarjetaCredito(String TarjetaCredito){
+        if (TarjetaCredito == null){
+            System.out.println("Numero de tarjeta invalido");
+        }
         this.TarjetaCredito=TarjetaCredito;
-        System.out.println("Ingrese los numeros de su tarjeta: "+TarjetaCredito);
+        System.out.println("Tarjeta ingresada exitosamente");
     }
 
     public void verResumenFinanciero(){
         System.out.println("---------RESUMEN FINANCIERO-------\n");
         System.out.println("Cliente: "+nombre+"\nCuenta: "+tipo_cuenta+"\nTarjeta de Credito: "+TarjetaCredito+"\nSaldo total: "+saldo);
+    }
+
+    public String getTipo_cuenta() {
+        return tipo_cuenta;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getTarjetaCredito() {
+        return TarjetaCredito;
     }
 }
