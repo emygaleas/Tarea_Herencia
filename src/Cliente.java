@@ -58,4 +58,20 @@ public class Cliente extends Persona{
     public String getTarjetaCredito() {
         return TarjetaCredito;
     }
+
+    public void retirarMonto(double monto){
+        if (monto > 0 && saldo >= monto) {
+            saldo -= monto;
+        } else{
+            System.out.println("Fondos insuficientes.");
+        }
+    }
+
+    public void depositarMonto(double monto){
+        if (monto > 0) {
+            saldo += monto;
+            System.out.println("Depósito realizado con éxito.");
+        }
+    }
+
 }

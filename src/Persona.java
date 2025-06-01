@@ -36,4 +36,5 @@ public abstract class Persona {
     public String getTelefono() {
         return telefono;
     }
+
 }

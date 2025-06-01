@@ -35,7 +35,4 @@ public class Empleado extends Persona{
         System.out.println("Los datos se han actualizado de forma correcta");
     }
 
-    public void registrarPrestamo(Cliente cliente, double monto){
-        cliente.solicitarPrestamo(monto);
-    }
 }

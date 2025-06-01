@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Cajero extends Empleado{
     protected double monto;
     protected Cliente cliente;
@@ -12,17 +14,10 @@ public class Cajero extends Empleado{
     }
 
     public void procesarRetiro(Cliente cliente, double monto){
-        if (cliente.getSaldo()<monto){
-            System.out.println("Saldo insuficiente");
-        }
-        System.out.println("Cantidad retirada: "+monto);
-    }
-
-    public void consultarSaldo(Cliente cliente){
-        System.out.println("Su saldo actual es: "+cliente.getSaldo());
+        cliente.depositarMonto(monto);
     }
 
     public void procesarDeposito(Cliente cliente, double monto){
-        System.out.println("Cantidad depositada: "+monto);
+        cliente.retirarMonto(monto);
     }
 }
